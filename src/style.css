@@ -1,4 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 20px;
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header,
+main,
+footer {
+  padding: 20px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  gap: 4%;
+  height: 100%;
+}
+
+section {
+  padding: 20px 0;
+}
+
+.show-head {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.scores-list {
+  width: 100%;
+  border: 1px solid black;
+}
+
+li {
+  display: flex;
+  list-style: none;
+}
+
+.scores-list li:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.scores-list li:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+.input-name-score input {
+  width: 100%;
+}
+
+.score-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer {
+  border-top: 1px solid black;
+  background-color: #d3d3d3;
 }
