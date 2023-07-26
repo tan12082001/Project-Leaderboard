@@ -73,7 +73,7 @@ In order to run this project you need:
  Linters
 
 ```sh
- cd Project-To-Do-List
+ cd Project-Leaderboard
  npm install
 ```
 
@@ -82,7 +82,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 ```sh
   cd my-folder
-  git clone git@github.com:tan12082001/Project-To-Do-List.git
+  git clone git@github.com:tan12082001/Project-Leaderboard.git
 ```
 
 ### Usage
