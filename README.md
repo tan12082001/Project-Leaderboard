@@ -61,7 +61,7 @@
 
  <a name="live-demo"></a>
 
-- [Leaderboard live demo will be included after completion of adding all features]()
+- [Leaderboard live demo](https://tan12082001.github.io/Project-Leaderboard/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,9 +126,7 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Deployment of the Leaderboard Webpage**
-
-- [ ] **Implementing form inputs validations**
+- [ ] **Apply more styles for the page**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
