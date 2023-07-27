@@ -116,7 +116,37 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://project-leaderboard/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_add_score_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/add-score.js */ \"./src/modules/add-score.js\");\n/* harmony import */ var _modules_refresh_score_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/refresh-score.js */ \"./src/modules/refresh-score.js\");\n\n\n\n\nconst REFRESH = document.getElementById('scores-refresh');\nconst ADDSCORE = document.getElementById('add-score');\nconst USERNAME = document.getElementById('name');\nconst USERSCORE = document.getElementById('score');\n\ndocument.addEventListener('DOMContentLoaded', _modules_refresh_score_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\nREFRESH.addEventListener('click', _modules_refresh_score_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"]);\n\nADDSCORE.addEventListener('click', (e) => {\n  e.preventDefault();\n  (0,_modules_add_score_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(USERNAME.value, USERSCORE.value);\n  USERNAME.value = '';\n  USERSCORE.value = '';\n});\n\n\n//# sourceURL=webpack://project-leaderboard/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/add-score.js":
+/*!**********************************!*\
+  !*** ./src/modules/add-score.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api.js */ \"./src/modules/api.js\");\n\n\nconst addScore = async (name, score) => {\n  const response = await fetch(_api_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"], {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json; charset=UTF-8' },\n    body: JSON.stringify({ user: name, score }),\n  });\n  const data = await response.json();\n  return data.result;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addScore);\n\n//# sourceURL=webpack://project-leaderboard/./src/modules/add-score.js?");
+
+/***/ }),
+
+/***/ "./src/modules/api.js":
+/*!****************************!*\
+  !*** ./src/modules/api.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Mock game API is created and the Game ID is generated.\nconst API_SERVER = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';\nconst GAME_ID = 'issVk2NaSb1SYQP3ntQZ';\nconst MY_API = `${API_SERVER}games/${GAME_ID}/scores/`;\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MY_API);\n\n//# sourceURL=webpack://project-leaderboard/./src/modules/api.js?");
+
+/***/ }),
+
+/***/ "./src/modules/refresh-score.js":
+/*!**************************************!*\
+  !*** ./src/modules/refresh-score.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api.js */ \"./src/modules/api.js\");\n\n\nconst refreshScores = async () => {\n  const SCORES_LIST = document.querySelector('.scores-list');\n  const response = await fetch(_api_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n  const data = await response.json();\n  const scores = data.result;\n  scores.sort((a, b) => b.score - a.score);\n  SCORES_LIST.innerHTML = '';\n  scores.forEach((n) => {\n    SCORES_LIST.innerHTML += `\n        <li class='display-name-score'>\n        <p class='show-name'>${n.user}: </p>\n        <p class='show-score'>${n.score}</p>\n        </li>\n    `;\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (refreshScores);\n\n//# sourceURL=webpack://project-leaderboard/./src/modules/refresh-score.js?");
 
 /***/ })
 
