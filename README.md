@@ -47,6 +47,12 @@
 
 - **Responsive Web design**
 
+- **Set data and get data from Mock API using REST GET and POST methods**
+
+- **setting the new score on addscore click**
+
+- **Display scores from API in descending order of scores.**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
@@ -122,9 +128,7 @@ You can deploy this project using:
 
 - [ ] **Deployment of the Leaderboard Webpage**
 
-- [ ] **Using API and async functions**
-
-- [ ] **Implementing Add a new score and display scores dynamically**
+- [ ] **Implementing form inputs validations**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
